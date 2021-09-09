@@ -1,8 +1,14 @@
 import { Edge, Graph, Vertex } from 'graph'
+import { Matrix } from 'matrix'
 import React from 'react'
 import './App.css'
 
 export function App() {
+  const matrix = new Matrix([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ])
   const graph = new Graph({
     directed: false,
     vertices: new Set<Vertex>([0, 1, 2, 3, 4]),
@@ -23,6 +29,10 @@ export function App() {
         <div className="column">
           <h3>Adjacency Matrix</h3>
           <pre style={{ fontSize: '1.125rem' }}>{graph.adjacencyMatrix.join('\n').replaceAll(',', ' ')}</pre>
+          <h3>Matrix</h3>
+          <pre style={{ fontSize: '1.125rem' }}>{matrix.join('\n').replaceAll(',', ' ')}</pre>
+          <h3>Matrix^T</h3>
+          <pre style={{ fontSize: '1.125rem' }}>{matrix.transpose().join('\n').replaceAll(',', ' ')}</pre>
         </div>
       </div>
       <svg height="100vmin" width="100vmin">

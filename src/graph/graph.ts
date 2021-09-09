@@ -1,4 +1,4 @@
-import { AdjacencyList, AdjacencyMatrix, IGraph } from 'graph/interfaces'
+import { AdjacencyList, AdjacencyMatrix, IGraph } from '.'
 
 export class Graph implements IGraph {
   vertices
